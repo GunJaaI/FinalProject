@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
-    [SerializeField] private int health = 100;
-    public int MAX_HEALTH = 100;
+public class HealthEnemy : MonoBehaviour
+{
+    [SerializeField] private int healthEnemy = 100;
+    public int MAX_HEALTH_ENEMY = 100;
     public HealthBar healthBar;
 
     void Start() {
-        health = MAX_HEALTH;
-        healthBar.SetMaxHealth(MAX_HEALTH);
+        healthEnemy = MAX_HEALTH_ENEMY;
+        healthBar.SetMaxHealth(MAX_HEALTH_ENEMY);
     }
 
     //Update is called once per frame
@@ -28,10 +29,10 @@ public class Health : MonoBehaviour {
         if (amount < 0) {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damade!");
         }
-        health -= amount;
-        healthBar.SetHealth(health);
+        healthEnemy -= amount;
+        healthBar.SetHealth(healthEnemy);
 
-        if (health <= 0) {
+        if (healthEnemy <= 0) {
             Die();
         }
     }
@@ -41,22 +42,22 @@ public class Health : MonoBehaviour {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Healing!");
         }
 
-        bool overMaxHealth = (health + amount > MAX_HEALTH) ;
+        bool overMaxHealth = (healthEnemy + amount > MAX_HEALTH_ENEMY) ;
 
         if (overMaxHealth) {
-            this.health = MAX_HEALTH; // when over heal
-            healthBar.SetHealth(MAX_HEALTH);
+            this.healthEnemy = MAX_HEALTH_ENEMY; // when over heal
+            healthBar.SetHealth(MAX_HEALTH_ENEMY);
         } else {
-            this.health += amount; // when heal not full
-            healthBar.SetHealth(health);
+            this.healthEnemy += amount; // when heal not full
+            healthBar.SetHealth(healthEnemy);
         }
-        this.health += amount;
-        healthBar.SetHealth(health);    
+        this.healthEnemy += amount;
+        healthBar.SetHealth(healthEnemy);    
     }
 
     private void Die() {
-        Debug.Log("Did Im Dead!?");
-        healthBar.SetHealth(health);
+        Debug.Log("Enemy Dead!?");
+        healthBar.SetHealth(healthEnemy);
         Destroy(gameObject);
     }
 }

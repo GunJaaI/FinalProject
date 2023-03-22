@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
     public MovementJoystick movementJoystick;
     public float playerSpeed;
     private Rigidbody2D rb;
+
+    private Health health1;
     //private Vector2 playerDirection;
     
     // Start is called before the first frame update

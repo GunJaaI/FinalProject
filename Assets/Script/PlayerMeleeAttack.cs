@@ -35,7 +35,7 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
        if (other.tag == "Enemy") {
-            other.GetComponent<Health>().Damage(damage);
+            other.GetComponent<HealthEnemy>().Damage(damage);
             //Debug.Log("Enemy hit");
         } 
     }
