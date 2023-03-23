@@ -34,6 +34,10 @@ public class PasueMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
+    public void Setting() {
+        
+    }
+
     public void LoadMenu() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
