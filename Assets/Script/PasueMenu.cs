@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PasueMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    private Snowfall snowfall;
     //private bool a = true;
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class PasueMenu : MonoBehaviour {
     public void LoadMenu() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        snowfall = GetComponent<Snowfall>();
         Debug.Log("Loading Menu...");
     }
 
