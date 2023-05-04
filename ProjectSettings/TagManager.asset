@@ -42,11 +42,17 @@ TagManager:
   - name: Background
     uniqueID: 2798680893
     locked: 0
+  - name: Wall
+    uniqueID: 2281420905
+    locked: 0
   - name: Background1
     uniqueID: 2460306481
     locked: 0
   - name: Background2
     uniqueID: 3855985355
+    locked: 0
+  - name: Character
+    uniqueID: 1409812905
     locked: 0
   - name: Tree
     uniqueID: 230232113
@@ -62,9 +68,6 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Character
-    uniqueID: 1409812905
     locked: 0
   - name: Foreground
     uniqueID: 227532233
