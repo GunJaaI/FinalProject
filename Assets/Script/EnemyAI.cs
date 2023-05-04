@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour {
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+    private Animator anim;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -19,6 +20,7 @@ public class EnemyAI : MonoBehaviour {
     void Start() {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         
@@ -39,14 +41,17 @@ public class EnemyAI : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
+        Walking();
         if (path == null) {
             return;
         }
         if (currentWaypoint >= path.vectorPath.Count) {
             reachedEndOfPath = true;
+            //Walking();
             return;
         } else {
             reachedEndOfPath = false;
+            StopWalking();
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -71,5 +76,13 @@ public class EnemyAI : MonoBehaviour {
         } else if (force.x <= 0.01f) {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+
+    void Walking() {
+        anim.SetBool("Walk", true);
+    }
+
+    void StopWalking() {
+        anim.SetBool("Walk", false);
     }
 }

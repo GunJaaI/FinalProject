@@ -58,6 +58,7 @@ public class HealthEnemy : MonoBehaviour
     private void Die() {
         Debug.Log("Enemy Dead!?");
         healthBar.SetHealth(healthEnemy);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }
