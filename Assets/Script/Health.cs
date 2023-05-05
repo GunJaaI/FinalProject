@@ -6,21 +6,24 @@ public class Health : MonoBehaviour {
     [SerializeField] private int health = 100;
     public int MAX_HEALTH = 100;
     public HealthBar healthBar;
+    public GameObject healthText;
+    private Animator anim;
 
     void Start() {
         health = MAX_HEALTH;
         healthBar.SetMaxHealth(MAX_HEALTH);
+        anim = GetComponent<Animator>();
     }
 
     //Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         // if (Input.GetKeyDown(KeyCode.Space)) { //test method
         //     Damage(10);
         //     Debug.Log("damage?");
         // }
 
         // if (Input.GetKeyDown(KeyCode.H)) { //test method
-        //     // Heal(10);
+        //     Heal(10);
         // }
     }
 
@@ -28,11 +31,19 @@ public class Health : MonoBehaviour {
         if (amount < 0) {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damade!");
         }
+        anim.SetTrigger("Hurt");
+
         health -= amount;
         healthBar.SetHealth(health);
 
+        RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        textTransform.SetParent(canvas.transform);
+
         if (health <= 0) {
-            Die();
+            anim.SetTrigger("Die");
+            //Die();
         }
     }
 

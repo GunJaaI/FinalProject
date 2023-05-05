@@ -8,7 +8,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     [SerializeField] private float meleeSpeed;
     [SerializeField] private int damage;
     float timeUntilMelee;
-    public bool a = true;
+    private bool a = true;
 
     // Update is called once per frame
     public void Update() {

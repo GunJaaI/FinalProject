@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyHurtLeftAnimation
+  m_Name: PlayerHurtAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -30,7 +30,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -42,7 +42,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -58,8 +58,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.1724138
-        value: -0.19
+        time: 0.05
+        value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -67,7 +67,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -79,7 +79,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -95,8 +95,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.1724138
-        value: -0.17
+        time: 0.05
+        value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -104,7 +104,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -116,7 +116,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -132,7 +132,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -144,44 +144,18 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
-    - time: 0.03448276
-      value: {fileID: 21300000, guid: 323ad1b00b68aa441aaf3608494110e4, type: 3}
-    - time: 0.06896552
-      value: {fileID: 21300000, guid: 46a6ffdb3094fd2469931c42a5cd0899, type: 3}
-    - time: 0.10344828
-      value: {fileID: 21300000, guid: 832cefe828eed7c498edf8b443854d89, type: 3}
-    - time: 0.13793103
-      value: {fileID: 21300000, guid: f85215eba1c2498439b930946285f9fc, type: 3}
-    - time: 0.1724138
-      value: {fileID: 21300000, guid: e41cf91e7e0408948902166def36ca7f, type: 3}
-    - time: 0.20689656
-      value: {fileID: 21300000, guid: 36650c3ee74763248bef24ebd97635c6, type: 3}
-    - time: 0.2413793
-      value: {fileID: 21300000, guid: 7610f28bc716bb14291aedcdabb5e30e, type: 3}
-    - time: 0.27586207
-      value: {fileID: 21300000, guid: 5bd6c2246ea6078469ef238bb04b55de, type: 3}
-    - time: 0.31034482
-      value: {fileID: 21300000, guid: 85822d65ba90dd5488bdab1936d65502, type: 3}
-    - time: 0.3448276
-      value: {fileID: 21300000, guid: b3cc5a2f5a0bc0c4db9907eed6d04b61, type: 3}
-    - time: 0.37931034
-      value: {fileID: 21300000, guid: f8efebaa37b1e8c408ef954a577eeb36, type: 3}
-    - time: 0.41379312
-      value: {fileID: 21300000, guid: f3a8cbb6b23293f4c833c743604b9ce1, type: 3}
-    - time: 0.44827586
-      value: {fileID: 21300000, guid: 5c11c62ac4dfdd146800c068753c2c4a, type: 3}
-    - time: 0.4827586
-      value: {fileID: 21300000, guid: 069f996dacbff7440970107a151d28dd, type: 3}
+    - time: 0
+      value: {fileID: -2060164218, guid: 57916026f187a0b4dae15e7aa77bf5f6, type: 3}
     attribute: m_Sprite
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 29
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -189,61 +163,48 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2272420214
+      path: 3509656525
       attribute: 4215373228
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2272420214
+      path: 3509656525
       attribute: 2334886179
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2272420214
+      path: 3509656525
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 2272420214
+      path: 3509656525
       attribute: 2526845255
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2272420214
+      path: 3509656525
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 323ad1b00b68aa441aaf3608494110e4, type: 3}
-    - {fileID: 21300000, guid: 46a6ffdb3094fd2469931c42a5cd0899, type: 3}
-    - {fileID: 21300000, guid: 832cefe828eed7c498edf8b443854d89, type: 3}
-    - {fileID: 21300000, guid: f85215eba1c2498439b930946285f9fc, type: 3}
-    - {fileID: 21300000, guid: e41cf91e7e0408948902166def36ca7f, type: 3}
-    - {fileID: 21300000, guid: 36650c3ee74763248bef24ebd97635c6, type: 3}
-    - {fileID: 21300000, guid: 7610f28bc716bb14291aedcdabb5e30e, type: 3}
-    - {fileID: 21300000, guid: 5bd6c2246ea6078469ef238bb04b55de, type: 3}
-    - {fileID: 21300000, guid: 85822d65ba90dd5488bdab1936d65502, type: 3}
-    - {fileID: 21300000, guid: b3cc5a2f5a0bc0c4db9907eed6d04b61, type: 3}
-    - {fileID: 21300000, guid: f8efebaa37b1e8c408ef954a577eeb36, type: 3}
-    - {fileID: 21300000, guid: f3a8cbb6b23293f4c833c743604b9ce1, type: 3}
-    - {fileID: 21300000, guid: 5c11c62ac4dfdd146800c068753c2c4a, type: 3}
-    - {fileID: 21300000, guid: 069f996dacbff7440970107a151d28dd, type: 3}
+    - {fileID: -2060164218, guid: 57916026f187a0b4dae15e7aa77bf5f6, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51724136
+    m_StopTime: 0.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -272,7 +233,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -284,7 +245,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -300,8 +261,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.1724138
-        value: -0.19
+        time: 0.05
+        value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -309,7 +270,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -321,7 +282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -337,8 +298,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.1724138
-        value: -0.17
+        time: 0.05
+        value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -346,7 +307,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -358,7 +319,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -374,7 +335,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51724136
+        time: 0.1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -386,7 +347,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: 0_Warrior_Idle_000
+    path: Idle_0
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
