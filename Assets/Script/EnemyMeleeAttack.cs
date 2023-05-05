@@ -11,8 +11,11 @@ public class EnemyMeleeAttack : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
+
+    //Reference
     private Animator anim;
     private Health playerHealth;
+
     private void Awake() {
         anim = GetComponent<Animator>();
     }
@@ -22,10 +25,12 @@ public class EnemyMeleeAttack : MonoBehaviour
 
         //Attack only when player in sight?
         if (PlayerInSight()) {
-            if (cooldownTimer >= Time.deltaTime) {
+            if (cooldownTimer >= attackCooldown) {
                 cooldownTimer = 0;
-                anim.SetTrigger("Attack");
+                anim.SetBool("Attack", true);
             }
+        } else {
+            anim.SetBool("Attack", false);
         }
     }
 

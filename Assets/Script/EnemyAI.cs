@@ -8,9 +8,10 @@ public class EnemyAI : MonoBehaviour {
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public Transform enemyGFX;
+    public Collider2D attackRange;
 
     Path path;
-    int currentWaypoint = 0;
+    private int currentWaypoint = 0;
     bool reachedEndOfPath = false;
     private Animator anim;
 
@@ -38,6 +39,8 @@ public class EnemyAI : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
+
+    public bool enemyTurnLeft;
 
     // Update is called once per frame
     void FixedUpdate() {
@@ -72,10 +75,31 @@ public class EnemyAI : MonoBehaviour {
         //     enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         // }
         if (force.x >= 0.01f) {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            if (enemyTurnLeft) {
+                EnemyTurnLeft();
+            } else {
+                EnemyTurnRight();
+            }
+
+            //enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         } else if (force.x <= 0.01f) {
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            if (enemyTurnLeft == !enemyTurnLeft) {
+                EnemyTurnRight();
+            } else {
+                EnemyTurnLeft();
+            }
+
+            //enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
+
+        // // Flip the attack range along with the enemy graphic
+        // if (enemyTurnLeft) {
+        //     //attackRange.transform.localPosition = new Vector3(-0.5f, 0f, 0f);
+        //     attackRange.transform.localScale = new Vector3(-1f, 1f, 1f);
+        // } else {
+        //     //ttackRange.transform.localPosition = new Vector3(0.5f, 0f, 0f);
+        //     attackRange.transform.localScale = new Vector3(1f, 1f, 1f);
+        // }
     }
 
     void Walking() {
@@ -84,5 +108,15 @@ public class EnemyAI : MonoBehaviour {
 
     void StopWalking() {
         anim.SetBool("Walk", false);
+    }
+
+    public void EnemyTurnLeft() {
+        enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+        attackRange.transform.localScale = new Vector3(-1f, 1f, 1f);
+    }
+
+    public void EnemyTurnRight() {
+        enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        attackRange.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }
