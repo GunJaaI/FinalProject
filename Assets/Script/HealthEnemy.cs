@@ -69,7 +69,7 @@ public class HealthEnemy : MonoBehaviour {
         Debug.Log("Enemy Dead!?");
 
         healthBar.SetHealth(healthEnemy);
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

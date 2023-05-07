@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PasueMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
+    public static bool OptionGameIn = false;
     public GameObject pauseMenuUI;
-    private Snowfall snowfall;
-    //private bool a = true;
+    public GameObject optionMenuUI;
 
     // Update is called once per frame
     void Update() {
@@ -15,6 +15,11 @@ public class PasueMenu : MonoBehaviour {
                 Pasue();
                 //Resume();
                 Debug.Log("Game is Resume.");
+                if (OptionGameIn == true) {
+                    OptionIn();
+                } else if (OptionGameIn == false) {
+                    OptionOut();
+                }
             } else {
                 Resume();
                 //Pasue();
@@ -34,14 +39,25 @@ public class PasueMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
-    public void Setting() {
-        
+    public void OptionIn() {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        OptionGameIn = true;
     }
+
+    public void OptionOut() {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        OptionGameIn = false;
+    }
+
+    //do option in unity
 
     public void LoadMenu() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
-        snowfall = GetComponent<Snowfall>();
+        SceneManager.LoadScene("0 - Menu");
         Debug.Log("Loading Menu...");
     }
 

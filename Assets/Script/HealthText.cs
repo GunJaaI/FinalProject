@@ -8,6 +8,7 @@ public class HealthText : MonoBehaviour {
     public float floatSpeed = 200f;
     public Vector3 floatDirection = new Vector3(0, 1, 0);
     public TextMeshProUGUI textMesh;
+    //public TMP_Text stringAmount;
 
     RectTransform reactTransform;
     Color startingColor;
@@ -29,5 +30,11 @@ public class HealthText : MonoBehaviour {
         if (timeElapsed > timeToLive) {
             Destroy(gameObject);
         }
+    }
+
+    public void ChangeTextPopup(int amount) { //ยังทำไม่ได้
+        //stringAmount.SetText(amount.ToString());
+        textMesh.text = amount.ToString();
+        //textMesh.text = stringAmount;
     }
 }

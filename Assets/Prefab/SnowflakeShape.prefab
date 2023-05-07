@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3224607221603402736
+--- !u!1 &783707545461195055
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,65 +8,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3224607221603402740}
-  - component: {fileID: 3224607221603402743}
-  - component: {fileID: 3224607221603402742}
-  - component: {fileID: 3224607221603402737}
-  m_Layer: 0
+  - component: {fileID: 783707545461195057}
+  - component: {fileID: 3274169741206480348}
+  - component: {fileID: 1533346172264616670}
+  - component: {fileID: 7878997949984725040}
+  m_Layer: 7
   m_Name: SnowflakeShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3224607221603402740
+--- !u!4 &783707545461195057
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3224607221603402736}
+  m_GameObject: {fileID: 783707545461195055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 518.6578, y: 433.72427, z: -6.214085}
+  m_LocalPosition: {x: -0.403567, y: -0.118814215, z: -0.011668402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3224607221603402743
+--- !u!114 &3274169741206480348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3224607221603402736}
+  m_GameObject: {fileID: 783707545461195055}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfe7457d0a9a85b44997182eef4649f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPointsLeft: 6
-  numPointsRight: 10
-  radiusLeft: 0.1
-  radiusRight: 0.2
-  thicknessLeft: 0.1
-  thicknessRight: 0.13
+  numIterations: 4
+  lengthLeft: 0.1
+  lengthRight: 0.5
+  thicknessLeft: 0.01
+  thicknessRight: 0.05
+  color: {r: 1, g: 1, b: 1, a: 1}
   xLeft: -1
   xRight: 1
   yUp: -1
-  yDown: -5
+  yDown: -7
   rotationSpeedXLeft: 30
   rotationSpeedXRight: 45
   rotationSpeedZLeft: 15
   rotationSpeedZRight: 30
---- !u!120 &3224607221603402742
+--- !u!120 &1533346172264616670
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3224607221603402736}
+  m_GameObject: {fileID: 783707545461195055}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -112,13 +112,13 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.28301883
-        inSlope: 0
-        outSlope: 0
+        value: 0.14034528
+        inSlope: -0.043742456
+        outSlope: -0.043742456
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0.120328836
       - serializedVersion: 3
         time: 1
         value: 0
@@ -168,14 +168,14 @@ LineRenderer:
     generateLightingData: 1
   m_UseWorldSpace: 0
   m_Loop: 1
---- !u!50 &3224607221603402737
+--- !u!50 &7878997949984725040
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3224607221603402736}
+  m_GameObject: {fileID: 783707545461195055}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
