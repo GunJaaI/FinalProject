@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour {
-    [SerializeField] private int health = 100;
-    public int MAX_HEALTH = 100;
-    public HealthBar healthBar;
-    public GameObject healthText;
+    [SerializeField] private int health = 100; //main health
+    public int MAX_HEALTH = 100; // Max health
+    public HealthBar healthBar; // HealthBar Componenet
+
+    public GameObject healthText; // HealthText in canvas
+
     private Animator anim;
 
     void Start() {
