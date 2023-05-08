@@ -472,6 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1978859240}
+  optionMenuUI: {fileID: 0}
 --- !u!1 &220834983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   health: 100
   MAX_HEALTH: 500
   healthBar: {fileID: 1773931653}
+  healthText: {fileID: 0}
 --- !u!95 &355538685
 Animator:
   serializedVersion: 5
@@ -1320,7 +1322,6 @@ MonoBehaviour:
   anim: {fileID: 355538685}
   meleeSpeed: 0.25
   damage: 25
-  a: 1
 --- !u!1 &369670320
 GameObject:
   m_ObjectHideFlags: 0
@@ -16218,17 +16219,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657873580}
   m_CullTransparentMesh: 1
---- !u!114 &1659184093 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1873881432058921898, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-  m_PrefabInstance: {fileID: 6391940799522668879}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a79f8e974a7474384e719dfac068e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1694930207
 GameObject:
   m_ObjectHideFlags: 0
@@ -17734,6 +17724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1978859240}
+  optionMenuUI: {fileID: 0}
 --- !u!95 &1978859245
 Animator:
   serializedVersion: 5
@@ -18658,120 +18649,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138074150}
   m_CullTransparentMesh: 1
---- !u!1001 &6391940799522668879
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 359182963496962157, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1659184093}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.398
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.15466815
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.008798679
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034323, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6391940799856034326, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7843655916551938339, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7843655916551938339, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: MAX_HEALTH
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008437533668824050, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8008437533668824050, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_Value
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1659184093}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthBar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036052057316435305, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8206387276088620026, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000000059604645
-      objectReference: {fileID: 0}
-    - target: {fileID: 8206387276088620026, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000000007450581
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 06aa326ee1dd2054c89f54f5db7879c0, type: 3}

@@ -53,6 +53,7 @@ public class Health : MonoBehaviour {
         if (amount < 0) {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Healing!");
         }
+        anim.SetTrigger("Heal");
 
         bool overMaxHealth = (health + amount > MAX_HEALTH) ;
 
