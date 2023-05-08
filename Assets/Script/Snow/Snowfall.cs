@@ -26,4 +26,5 @@ public class Snowfall : MonoBehaviour {
         GameObject snowflake = Instantiate(snowflakeShapePrefab, spawnPos, Quaternion.identity);
         snowflake.transform.parent = transform;
     }
+
 }

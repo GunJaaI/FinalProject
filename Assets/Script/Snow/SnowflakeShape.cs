@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnowflakeShape : MonoBehaviour {
-    public int numIterations = 4;
+    public int numIterationsMin = 1;
+    public int numIterationsMax = 5;
     public float lengthLeft = 0.1f; //1
     public float lengthRight = 0.5f; //2
     public float thicknessLeft = 0.01f; //0.1
@@ -32,6 +33,7 @@ public class SnowflakeShape : MonoBehaviour {
 
         float length = Random.Range(lengthLeft, lengthRight); // Random Thickness value snowflake
         float thickness = Random.Range(thicknessLeft, thicknessRight); // Random Thickness value snowflake
+        int numIterations = Random.Range(numIterationsMin, numIterationsMax);
         Color color = new Color(92f, 226f, 255f, Random.Range(0.25f, 0.75f)); // Random Opacity for Linerenderer
         
         Vector3[] points = GenerateSnowflakePoints(numIterations, length);
