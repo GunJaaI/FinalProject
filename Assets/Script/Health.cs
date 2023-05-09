@@ -8,7 +8,7 @@ public class Health : MonoBehaviour {
     public HealthBar healthBar; // HealthBar Componenet
 
     public GameObject healthText; // HealthText in canvas
-
+    public int enemyAmount = 0;
     private Animator anim;
 
     void Start() {

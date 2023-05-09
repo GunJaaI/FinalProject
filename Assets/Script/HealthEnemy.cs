@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthEnemy : MonoBehaviour {
     [SerializeField] private int healthEnemy = 100;
+    [SerializeField] private Health Amount;
     public int MAX_HEALTH_ENEMY = 100;
     public HealthBar healthBar;
     public GameObject healthText;
@@ -67,7 +68,7 @@ public class HealthEnemy : MonoBehaviour {
 
     private void Die() {
         Debug.Log("Enemy Dead!?");
-
+        Amount.enemyAmount--;
         healthBar.SetHealth(healthEnemy);
         //gameObject.SetActive(false);
         Destroy(gameObject);

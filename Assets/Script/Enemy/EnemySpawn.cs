@@ -4,28 +4,59 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+    // [SerializeField] public GameObject parentEnemy;
+
+    // [SerializeField] public GameObject EnemyBirth;
+
+    // [SerializeField] public float EnemyInterval;
+
+    // // Start is called before the first frame update
+    // void Start() {
+    //     StartCoroutine(SpawnEnemy(EnemyInterval, EnemyBirth, parentEnemy));
+    // }
+
+    // // Update is called once per frame
+    // void Update() {
+
+    // }
+    // private IEnumerator SpawnEnemy(float interval, GameObject enemy, GameObject parentEnemy) {
+    //     Vector3 parentPos = parentEnemy.transform.position;
+    //     Vector3 spawnPos = parentPos + new Vector3(Random.Range(-5f,5f),Random.Range(-5f,5f),0f);
+
+    //     yield return new WaitForSeconds(interval);
+    //     GameObject newEnemy = Instantiate(enemy, spawnPos, Quaternion.identity);
+    //     StartCoroutine(SpawnEnemy(interval, enemy, newEnemy));
+
+    // }
+
     [SerializeField] public GameObject parentEnemy;
 
     [SerializeField] public GameObject EnemyBirth;
-
+    [SerializeField] private Health Amount;
     [SerializeField] public float EnemyInterval;
 
-    // Start is called before the first frame update
-    void Start() {
-        StartCoroutine(SpawnEnemy(EnemyInterval, EnemyBirth, parentEnemy));
+    public int spawnTime;
+
+
+
+    private void Start()
+    {
+        InvokeRepeating("spawnEnemy", spawnTime, 1f);// 1f delay adjust
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-    private IEnumerator SpawnEnemy(float interval, GameObject enemy, GameObject parentEnemy) {
+    public void spawnEnemy()
+    {
         Vector3 parentPos = parentEnemy.transform.position;
-        Vector3 spawnPos = parentPos + new Vector3(Random.Range(-5f,5f),Random.Range(-5f,5f),0f);
+        Vector3 spawnPos = parentPos + new Vector3(Random.Range(-9f,9f),Random.Range(-9f,9f),0f);
 
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, spawnPos, Quaternion.identity);
-        StartCoroutine(SpawnEnemy(interval, enemy, newEnemy));
-
+        if(Amount.enemyAmount <= 3)
+        {
+            GameObject newEnemy = Instantiate(EnemyBirth, spawnPos, Quaternion.identity);
+            Amount.enemyAmount++;
+            newEnemy.SetActive(true);
+        }
+        Invoke("spawnEnemy", 1f);
     }
+
+
 }
