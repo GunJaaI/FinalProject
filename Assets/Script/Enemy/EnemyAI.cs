@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        target = FindObjectOfType<Player>().transform;
+
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         
     }
@@ -120,4 +122,12 @@ public class EnemyAI : MonoBehaviour {
         enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         attackRange.transform.localScale = new Vector3(1f, 1f, 1f);
     }
+
+    // public void EnemyScriptEnabledTrue() {
+    //     this.enabled = true;
+    // }
+
+    // public void EnemyScriptEnabledFalse() {
+    //     this.enabled = false;
+    // }
 }

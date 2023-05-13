@@ -8,7 +8,7 @@ public class Health : MonoBehaviour {
     public HealthBar healthBar; // HealthBar Componenet
 
     public GameObject healthText; // HealthText in canvas
-
+    public int enemyAmount = 0;
     private Animator anim;
 
     void Start() {
@@ -55,7 +55,12 @@ public class Health : MonoBehaviour {
         }
         anim.SetTrigger("Heal");
 
-        bool overMaxHealth = (health + amount > MAX_HEALTH) ;
+        bool overMaxHealth = (health + amount > MAX_HEALTH);
+
+        RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        textTransform.SetParent(canvas.transform);
 
         if (overMaxHealth) {
             this.health = MAX_HEALTH; // when over heal
